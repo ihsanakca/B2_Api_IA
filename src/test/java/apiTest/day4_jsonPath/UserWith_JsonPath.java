@@ -3,12 +3,9 @@ import static io.restassured.RestAssured.*;
 
 import io.restassured.path.json.JsonPath;
 import org.testng.annotations.BeforeClass;
-import groovy.util.logging.Slf4j;
-import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -132,6 +129,7 @@ public class UserWith_JsonPath {
         List<String> skills=jsonPath.getList("skills[0]");
 
         System.out.println("skills = " + skills.get(0));
+        System.out.println("skills = " + skills);
 
         Assert.assertEquals(skills.get(0),"PHP");
 
