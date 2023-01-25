@@ -134,6 +134,12 @@ public class UserWith_JsonPath {
         Assert.assertEquals(skills.get(0),"PHP");
 
         String skills2=jsonPath.getString("skills[0][0]");
+        String skills3=jsonPath.getString("skills[0][1]");
+        String skills4=jsonPath.get("skills[0][1]");
+
         System.out.println("skills2 = " + skills2);
+        System.out.println("skills3 = " + skills3);
+        System.out.println("skills4 = " + skills4);
+
     }
 }
