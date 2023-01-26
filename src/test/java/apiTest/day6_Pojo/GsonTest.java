@@ -37,6 +37,8 @@ public class GsonTest {
 
         System.out.println("dataMap = " + dataMap);
 
+        System.out.println("dataMap.get(\"email\") = " + dataMap.get("email"));
+
         //gson converting to object class
 
         PetStoreUser oneUser=gson.fromJson(myJsonBody,PetStoreUser.class);
@@ -45,7 +47,7 @@ public class GsonTest {
         //serialization
         //Java collection or pojo  to json
 
-        PetStoreUser petStoreUser=new PetStoreUser(9,"Jake23","Jake","Master",
+        PetStoreUser petStoreUser=new PetStoreUser(11,"Jake23","Jake","Master",
         "jake@gmail.com","Test1234","55512345",21);
 
         String jsonUser=gson.toJson(petStoreUser);

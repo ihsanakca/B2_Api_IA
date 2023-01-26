@@ -56,5 +56,38 @@ public class DeSerializationExample {
         Assert.assertEquals(company2,"GHAN II IT BV","FAILED check company2");
         System.out.println("company2 = " + company2);
 
+        List<Map<String,Object>> educationUser= (List<Map<String, Object>>) allUsers.get(7).get("education");
+        String school= (String) educationUser.get(0).get("school");
+
+        List<String> skills= (List<String>) allUsers.get(7).get("skills");
+        System.out.println("skills = " + skills);
+
+        System.out.println("school = " + school);
+
+        //x[3].education[0].degree
+        List<Map<String,Object>> educationUser2= (List<Map<String, Object>>) allUsers.get(3).get("education");
+        System.out.println("educationUser2.get(0).get(\"degree\") = " + educationUser2.get(0).get("degree"));
+
+
+
+    }
+
+    @Test
+    public void test2(){
+        Response response = given().accept(ContentType.JSON)
+                .pathParam("id", 110)
+                .when().get("/allusers/getbyid/{id}");
+
+        Assert.assertEquals(response.statusCode(),200);
+
+        List<Map<String,Object>> user110=response.body().as(List.class);
+
+        //System.out.println("user110 = " + user110);
+
+        List<Map<String,Object>> experience = (List<Map<String, Object>>) user110.get(0).get("experience");
+        String company = (String) experience.get(1).get("company");
+        System.out.println("company = " + company);
+
+
     }
 }

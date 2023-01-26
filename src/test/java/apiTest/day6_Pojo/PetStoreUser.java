@@ -25,6 +25,7 @@ public class PetStoreUser {
     private String phone;
     private int userStatus;
 
+
     public double getId() {
         return id;
     }
@@ -89,6 +90,7 @@ public class PetStoreUser {
         this.userStatus = userStatus;
     }
 
+    public PetStoreUser(){}
     public PetStoreUser(double id, String username, String firstName, String lastName, String email, String password, String phone, int userStatus) {
         this.id = id;
         this.username = username;

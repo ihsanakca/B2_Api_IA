@@ -1,0 +1,3 @@
+https://jsonpathfinder.com/
+https://jsoneditoronline.org/#left=local.jifaco&right=local.bineqo
+https://www.jsonschema2pojo.org/
