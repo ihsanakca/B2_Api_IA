@@ -1,4 +1,4 @@
-package apiTest.day6_Pojo;
+package apiTest.day06_Pojo;
 
 import com.google.gson.Gson;
 import org.testng.annotations.Test;

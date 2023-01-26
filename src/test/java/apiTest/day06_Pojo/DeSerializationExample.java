@@ -1,4 +1,4 @@
-package apiTest.day6_Pojo;
+package apiTest.day06_Pojo;
 
 import static io.restassured.RestAssured.*;
 
