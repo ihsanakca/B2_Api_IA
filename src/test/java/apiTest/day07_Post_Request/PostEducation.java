@@ -133,7 +133,7 @@ public class PostEducation {
         assertEquals(response.path("study"),"tester");
         //assertEquals(response.path("userid"),userID);
 
-        //
+        //hamcrestMatcher
 
         given().accept(ContentType.JSON)
                 .and()
