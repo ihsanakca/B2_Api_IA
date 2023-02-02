@@ -85,5 +85,38 @@ public class day4_getAllUsersWithJsonPath {
         System.out.println("allUsersAllSkills.get(0).get(0) = " + allUsersAllSkills.get(0).get(0));
         System.out.println("allUsersAllSkills.get(9).get(2) = " + allUsersAllSkills.get(9).get(2));
 
+
+    }
+    @Test
+    public void test5(){
+        Response response = RestAssured
+                .given()
+                .contentType(ContentType.JSON)
+                .queryParam("page", 1)
+                .queryParam("pagesize", 10)
+                .when()
+                .get("https://www.krafttechexlab.com/sw/api/v1/allusers/alluser");
+
+        Assert.assertEquals(response.statusCode(), 200);
+        Assert.assertEquals(response.contentType(), "application/json; charset=UTF-8");
+
+        //response.prettyPrint();
+
+        JsonPath jsonPath = response.jsonPath();
+
+        String school1=jsonPath.getString("education[0].school[0]");
+        //System.out.println("school1 = " + school1);
+
+     List<List<String>> eduList=jsonPath.getList("education[0]");
+       // System.out.println("eduList = " + eduList);
+
+        Map<String,Object> eduMap= (Map<String, Object>) eduList.get(0);
+        System.out.println("eduMap = " + eduMap);
+
+        System.out.println("eduMap.get(\"description\") = " + eduMap.get("description"));
+
+        String firstUserFirstEduDescr = jsonPath.getString("education[0].description[0]");
+        System.out.println("firstUserFirstEduDescr = " + firstUserFirstEduDescr);
+
     }
 }
