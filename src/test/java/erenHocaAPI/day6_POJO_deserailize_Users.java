@@ -45,16 +45,5 @@ public class day6_POJO_deserailize_Users {
         for (Education education2 : education) {
             System.out.println("education2 = " + education2);
         }
-
     }
-    @Test
-    public void test2(){
-        Response response=RestAssured.given()
-                .contentType(ContentType.JSON)
-                .relaxedHTTPSValidation()
-                .get("https://api.got.show/api/continents");
-        System.out.println(response.asString());
-        System.out.println("response.statusCode() = " + response.statusCode());
-    }
-
 }
