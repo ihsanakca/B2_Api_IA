@@ -5,10 +5,12 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.Assert;
+import static org.testng.Assert.*;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
 import java.util.Map;
+
 
 public class day7_PostMethod {
     //POST METHOD
@@ -61,15 +63,15 @@ public class day7_PostMethod {
                 .when()
                 .post("https://www.krafttechexlab.com/sw/api/v1/allusers/register");
 
-        Assert.assertEquals(response.statusCode(),200);
+        assertEquals(response.statusCode(),200);
 
         String actualName=response.path("name");
 
-        Assert.assertEquals(actualName,"xxx61");
+        assertEquals(actualName,"xxx61");
 
-        Assert.assertEquals(response.path("email"),"xxx61@xxx.com");
+        assertEquals(response.path("email"),"xxx61@xxx.com");
 
-        Assert.assertNotNull(response.path("id"));
+        assertNotNull(response.path("id"));
 
     }
     //TASK
