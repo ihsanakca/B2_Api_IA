@@ -23,8 +23,10 @@ public class SimpleGetRequest {
     }
     @Test
     public void test2(){
-        Response response = RestAssured.given().accept(ContentType.JSON)
-                .when().get(petStoreURL + "/store/inventory");
+        Response response = RestAssured.given()
+                .accept(ContentType.JSON)
+                .when()
+                .get(petStoreURL + "/store/inventory");
 
         System.out.println("response.statusCode() = " + response.statusCode());
 
@@ -38,16 +40,20 @@ public class SimpleGetRequest {
     @Test
     public void test3(){
         //verify test case using RestAssured library
-        RestAssured.given().accept(ContentType.JSON)
-                .when().get(petStoreURL + "/store/inventory")
+        RestAssured.given()
+                .accept(ContentType.JSON)
+                .when()
+                .get(petStoreURL + "/store/inventory")
                 .then()
                 .assertThat().statusCode(200)
                 .contentType("application/json");
     }
     @Test
     public void test4(){
-        Response response = RestAssured.given().accept(ContentType.JSON)
-                .when().get(petStoreURL + "/store/inventory");
+        Response response = RestAssured.given()
+                .accept(ContentType.JSON)
+                .when()
+                .get(petStoreURL + "/store/inventory");
 
         Assert.assertEquals(response.statusCode(),200);
         System.out.println("response.body().asString() = " + response.body().asString());

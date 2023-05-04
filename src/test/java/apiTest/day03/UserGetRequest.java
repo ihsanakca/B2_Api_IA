@@ -33,6 +33,21 @@ public class UserGetRequest {
 
         */
     @Test
+    public void testA(){
+        Response response = given().accept(ContentType.JSON)
+                .pathParam("id", 111)
+                .when()
+                .get(exlabURI+"/allusers/getbyid/{id}");
+
+        System.out.println(response.statusCode());
+        Assert.assertEquals(response.contentType(),"application/json; charset=UTF-8");
+        Assert.assertTrue(response.body().asString().contains("Thomas Eduson"));
+
+        response.prettyPrint();
+    }
+
+
+    @Test
     public void test2(){
         Response response= given().accept(ContentType.JSON)
                 .pathParam("id",111)
@@ -42,11 +57,11 @@ public class UserGetRequest {
         Assert.assertEquals(response.statusCode(),200);
         Assert.assertEquals(response.contentType(),"application/json; charset=UTF-8");
         Assert.assertEquals(response.header("Content-Type"),"application/json; charset=UTF-8");
-        Assert.assertEquals(response.header("Content-Length"),"636");
+        Assert.assertEquals(response.header("Content-Length"),"606");
 
         Assert.assertTrue(response.headers().hasHeaderWithName("Date"));
 
-        Assert.assertTrue(response.body().asString().contains("2017-05-08"));
+        Assert.assertTrue(response.body().asString().contains("2023-01-12"));
         Assert.assertTrue(response.body().asString().contains("Thomas Eduson"));
 
         System.out.println("response.body().asString() = " + response.body().asString());

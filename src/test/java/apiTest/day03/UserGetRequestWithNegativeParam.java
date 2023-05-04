@@ -61,6 +61,7 @@ public class UserGetRequestWithNegativeParam {
 
                 .queryParam("pagesize",50)
                 .queryParam("page",1)
+                .when().log().all()
                 .get("/allusers/alluser");
 
         Assert.assertEquals(response.statusCode(),200);
@@ -68,6 +69,8 @@ public class UserGetRequestWithNegativeParam {
         Assert.assertTrue(response.body().asString().contains("Thomas Eduson"));
         Assert.assertTrue(response.body().asString().contains("Cypress"));
         Assert.assertTrue(response.body().asString().contains("Developer"));
+
+        response.prettyPrint();
 
     }
 
