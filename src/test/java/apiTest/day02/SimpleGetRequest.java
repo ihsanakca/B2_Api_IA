@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 public class SimpleGetRequest {
 
     String petStoreURL="https://petstore.swagger.io/v2";
-    String exlabURL="https://www.krafttechexlab.com/sw/api/v1";
+  //  String exlabURL="https://www.krafttechexlab.com/sw/api/v1";
 
     @Test
     public void test1(){
